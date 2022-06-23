@@ -39,7 +39,7 @@ const usuariosGet=async(req=request, res=response)=>{
 
      await usuario.save();
 
-        res.json(usuario)
+       
       };
 
     const usuariosPut= async (req, res=response)=>{
