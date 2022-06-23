@@ -16,7 +16,7 @@ const UsuarioSchema=Schema({
         type:String,
         required:[true,'La contraseña es obligatoria']
     },
-    img:{
+    user:{
         type:String,
     },
 
@@ -26,14 +26,14 @@ const UsuarioSchema=Schema({
         enum:['ADMIN_ROLE','USER_ROLE']
     },
 
+    maestros:{
+        type:Array
+    },
+
     estado:{
         type:Boolean,
         default:true
     },
-    google:{
-        type:Boolean,
-        default:false
-    }
 
 
 

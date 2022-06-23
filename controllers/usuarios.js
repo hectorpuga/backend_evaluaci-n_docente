@@ -22,9 +22,9 @@ const usuariosGet=async(req=request, res=response)=>{
     const usuariosPost=async(req, res=response)=>{
      
 
-      const {nombre,correo,password,rol}=req.body;
+      const {nombre,correo,password,rol,user}=req.body;
 
-      const usuario=Usuario( {nombre,correo,password,rol});
+      const usuario=Usuario( {nombre,correo,password,rol,user});
 
       //Encriptar la contraseña
 
@@ -68,12 +68,6 @@ const usuariosGet=async(req=request, res=response)=>{
         })
       }
 
-    const usuariosPatch= (req, res=response)=>{
-        res.json({
-            
-            msg:'Patch API - controlador'
-        })
-      }
     const usuarioDelete= async(req, res=response)=>{
 
 
@@ -90,4 +84,4 @@ const usuariosGet=async(req=request, res=response)=>{
       };
 
 
-    module.exports={usuariosGet,usuariosPost,usuariosPut,usuariosPatch,usuarioDelete}
+    module.exports={usuariosGet,usuariosPost,usuariosPut,usuarioDelete}

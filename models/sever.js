@@ -9,6 +9,12 @@ class Server{
         this.port=process.env.PORT
         this.usuariosPath='/api/usuarios';
         this.authPath='/api/auth';
+        this.preguntasPath='/api/encuesta';
+        this.maestrosPath='/api/maestro';
+        this.carreraPath='/api/carrera';
+        
+
+
         
         //Conectar a base datos
         this.conectarDB();
@@ -42,6 +48,9 @@ class Server{
 
         this.app.use(this.authPath,require('../routes/auth'));
         this.app.use(this.usuariosPath,require('../routes/usuarios'));
+        this.app.use(this.preguntasPath,require('../routes/encuesta'));
+        this.app.use(this.maestrosPath,require('../routes/maestro'));
+        this.app.use(this.carreraPath,require('../routes/carrera'));
     }
 
     listen(){
