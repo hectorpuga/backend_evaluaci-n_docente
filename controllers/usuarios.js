@@ -22,9 +22,9 @@ const usuariosGet=async(req=request, res=response)=>{
     const usuariosPost=async(req, res=response)=>{
      
 
-      const {nombre,correo,password,rol,user}=req.body;
+      const {nombre,correo,password,rol,user,maestros}=req.body;
 
-      const usuario=Usuario( {nombre,correo,password,rol,user});
+      const usuario=Usuario( {nombre,correo,password,rol,user,maestros});
 
       //Encriptar la contraseña
 
@@ -38,6 +38,10 @@ const usuariosGet=async(req=request, res=response)=>{
       //Guardar en BD
 
      await usuario.save();
+
+     res.json({
+      usuario
+  });
 
        
       };

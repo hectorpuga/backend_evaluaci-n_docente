@@ -6,20 +6,41 @@ const { generaJWT } = require("../helpers/generar_jwt");
 
 const login=async(req,res=response)=>{
 
-    const {user,password}=req.body;
+   
 
     try {
+
+        const {user,password}=req.body;
+
+        console.log(user);
 
         // Verificar si el email existe 
         const usuario= await Usuario.findOne({user});
 
+        if(!usuario){
+            return res.status(400).json({
+                msg: 'Usuario / Password no son correctos - user'
+            });
+        }
       
 
         // Si el usuario est+a activo
 
+        if(!usuario.estado){
+            return res.status(400).json({
+                msg: 'Usuario / Password no son correctos - estado: false'
+            });
+        }
 
         // Verificar la contraseña
 
+        const validPassword= bcryptjs.compareSync(password, usuario.password);
+
+        if(!validPassword){
+            return res.status(400).json({
+                msg: 'Usuario / Password no son correctos - password'
+            });
+        }
       
        
 

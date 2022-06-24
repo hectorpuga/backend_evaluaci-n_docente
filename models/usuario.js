@@ -28,6 +28,7 @@ const UsuarioSchema=Schema({
 
     maestros:{
         type:Array
+
     },
 
     estado:{
