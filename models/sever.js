@@ -12,6 +12,7 @@ class Server{
         this.preguntasPath='/api/encuesta';
         this.maestrosPath='/api/maestro';
         this.carreraPath='/api/carrera';
+        this.excelPath='/api/excel';
         
 
 
@@ -51,6 +52,7 @@ class Server{
         this.app.use(this.preguntasPath,require('../routes/encuesta'));
         this.app.use(this.maestrosPath,require('../routes/maestro'));
         this.app.use(this.carreraPath,require('../routes/carrera'));
+        this.app.use(this.excelPath,require('../routes/excel'));
     }
 
     listen(){

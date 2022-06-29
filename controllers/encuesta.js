@@ -4,11 +4,11 @@ const Encuesta=require('../models/encuesta')
 
 const encuestaPost=async(req,res=response)=>{
 
-    const {pregunta}=req.body;
+    const {encuesta}=req.body;
 
-    const encuesta=Encuesta( {pregunta});
+    const pregunta=Encuesta( {encuesta});
 
-    encuesta.save();
+    pregunta.save();
 
     res.json({
      pregunta

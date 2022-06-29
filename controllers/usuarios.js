@@ -51,7 +51,7 @@ const usuariosGet=async(req=request, res=response)=>{
       
         const id =req.params.id;
 
-        const {_id,password,google,correo,...resto}=req.body;
+        const {password,...resto}=req.body;
 
         // TODO validar contra base de datos
 
